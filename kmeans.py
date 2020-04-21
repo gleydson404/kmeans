@@ -74,4 +74,5 @@ def execute():
     centroids, history_centroids, belongs_to = kmeans(2, dataset)
     plot(dataset, history_centroids, belongs_to)
 
+
 execute()
