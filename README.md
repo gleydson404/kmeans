@@ -1,5 +1,11 @@
 # kmeans
-Uma simpes Implementação do algoritmo kmeans.
+
+Esse projeto é uma simpes implementação do algoritmo kmeans utilizando apenas numpy.
+A idéia aqui é mostrar para inicianetes o funcionamento do algoritmo e como seria uma
+implementação bem básica em python, sem o uso de bibliotecas que trazer o algorimto já
+pronto.
+
+
 ## Requisitos
 
 Você vai precisar instalar as bibliotecas que estão no requirements.txt. Para isso, data pasta do projeto, faça:
@@ -14,7 +20,7 @@ Para rodar, basta executar o script kmeans.py que se encontra na raiz do projeto
 
 Durante a execução, uma janela com o dataset e os centroids plotados deve mostrar a evolução do algoritmo.
 
-![kmeans.py](https://imgur.com/a/Lu7d1Q6)
+![kmeans.py](https://i.imgur.com/8YEXrrz.png)
 
 
 ## Como colocar uma nova distância?
