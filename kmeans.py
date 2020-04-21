@@ -1,14 +1,7 @@
 import numpy as np
+from data_utils import load_dataset
+from distance import euclidian
 import matplotlib.pyplot as plt
-import matplotlib.animation as animation
-
-
-def load_dataset(name):
-    return np.loadtxt(name)
-
-
-def euclidian(a, b):
-    return np.linalg.norm(a-b)
 
 
 def plot(dataset, history_centroids, belongs_to):
@@ -33,12 +26,16 @@ def plot(dataset, history_centroids, belongs_to):
                 plt.pause(0.8)
 
 
-def kmeans(k, epsilon=0, distance='euclidian'):
+def load_distance_method(method):
+    distances = {
+        'euclidian': euclidian
+    }
+    return distances.get(method)
+
+
+def kmeans(k, dataset, epsilon=0, distance='euclidian'):
     history_centroids = []
-    if distance == 'euclidian':
-        dist_method = euclidian
-    dataset = load_dataset('durudataset.txt')
-    # dataset = dataset[:, 0:dataset.shape[1] - 1]
+    dist_method = load_distance_method(distance)
     num_instances, num_features = dataset.shape
     prototypes = dataset[np.random.randint(0, num_instances - 1, size=k)]
     history_centroids.append(prototypes)
@@ -63,21 +60,18 @@ def kmeans(k, epsilon=0, distance='euclidian'):
         for index in range(len(prototypes)):
             instances_close = [i for i in range(len(belongs_to)) if belongs_to[i] == index]
             prototype = np.mean(dataset[instances_close], axis=0)
-            # prototype = dataset[np.random.randint(0, num_instances, size=1)[0]]
             tmp_prototypes[index, :] = prototype
 
         prototypes = tmp_prototypes
 
         history_centroids.append(tmp_prototypes)
 
-    # plot(dataset, history_centroids, belongs_to)
-
     return prototypes, history_centroids, belongs_to
 
 
 def execute():
-    dataset = load_dataset('durudataset.txt')
-    centroids, history_centroids, belongs_to = kmeans(2)
+    dataset = load_dataset('flame.txt')
+    centroids, history_centroids, belongs_to = kmeans(2, dataset)
     plot(dataset, history_centroids, belongs_to)
 
 execute()
