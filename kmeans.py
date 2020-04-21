@@ -26,16 +26,16 @@ def plot(dataset, history_centroids, belongs_to):
                 plt.pause(0.8)
 
 
-def load_distance_method(method):
+def load_distance_function(distance_name):
     distances = {
         'euclidian': euclidian
     }
-    return distances.get(method)
+    return distances.get(distance_name)
 
 
 def kmeans(k, dataset, epsilon=0, distance='euclidian'):
     history_centroids = []
-    dist_method = load_distance_method(distance)
+    dist_method = load_distance_function(distance)
     num_instances, num_features = dataset.shape
     prototypes = dataset[np.random.randint(0, num_instances - 1, size=k)]
     history_centroids.append(prototypes)
