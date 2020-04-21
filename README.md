@@ -57,6 +57,11 @@ def execute():
     plot(dataset, history_centroids, belongs_to)
 
 ```
+
+### ### ALERTA!!! ####
+Não versione arquivos de datasets grandes. Os arquivos da pasta `data` estão versionados nesse projeto, apenas para fins educativos. Normalmente, arquivos de bases de dados NÂO devem ser adicionados ao github.
+
+
 ## Como funciona esse algoritmo?
 
 Há uma explicação do funcionamento básico do algoritmo kmeans no arquivo `kmeans.py.ipnb`. É um jupyter notebook. Se tiver duvida de como abrir um jupyter notebook, abrindo o arquivo no github, é possível ver o conteúdo renderizado.
