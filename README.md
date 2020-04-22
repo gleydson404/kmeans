@@ -1,9 +1,7 @@
 # kmeans
 
 Esse projeto é uma simples implementação do algoritmo kmeans utilizando apenas numpy.
-A idéia aqui é mostrar para inicianetes o funcionamento do algoritmo e como seria uma
-implementação bem básica em python, sem o uso de bibliotecas que trazer o algorimto já
-pronto.
+A idéia aqui é mostrar para iniciantes o funcionamento do algoritmo e como seria uma implementação bem básica em python, sem o uso de bibliotecas que trazem o algorimto já pronto.
 
 
 ## Requisitos
